@@ -1,0 +1,31 @@
+<h1>TASKS</h1><br>
+<div  *ngFor="let t of tsk">
+<ul>    
+        <li>{{t.Title}}</li>
+        {{t.Desc}}
+        <hr>
+</ul>
+ <!-- <h2>{{t.Title}}</h2>  
+ <h4>{{t.Desc}}</h4>  -->
+</div> 
+<p *ngIf="show">
+    <input type="text" placeholder="Enter Title" name="Title" [(ngModel)]="dummy.Title">&nbsp;
+    <input type="text" placeholder="Enter Description" [(ngModel)]="dummy.Desc">&nbsp;&nbsp;
+    <button (click)="addtsk()">Confirm</button>&nbsp;
+    <button (click)="hide()">Cancel</button>
+</p>
+<p *ngIf="disp">
+<input type="text" placeholder="Enter Task to be removed" name="Title" [(ngModel)]="tsk.Title">&nbsp;&nbsp;
+<button (click)=rmvtsk(tsk.Title)>Confirm</button>&nbsp;
+<button (click)="hides()">Cancel</button>
+</p>
+<p *ngIf="updisp">
+    <input type="text" placeholder="Enter Title" name="Titles" [(ngModel)]="tsk.Titles">&nbsp;
+    <input type="text" placeholder="Enter Title to Update" name="Title" [(ngModel)]="tsk.Title">&nbsp;
+    <input type="text" placeholder="Enter Description to Update" [(ngModel)]="tsk.Desc">&nbsp;&nbsp;
+    <button (click)="updttsk(tsk.Titles,tsk.Title,tsk.Desc)">Confirm</button>&nbsp;
+    <button (click)="uphds()">Cancel</button>
+</p>
+<button (click)="adds()">Add Task</button> 
+<button (click)="dels()">Delete Task</button> 
+<button (click)="upds()">Update Task</button> 
